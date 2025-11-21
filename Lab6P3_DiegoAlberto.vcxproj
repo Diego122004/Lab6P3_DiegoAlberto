@@ -125,13 +125,19 @@
   <ItemGroup>
     <ClCompile Include="Adoptador.cpp" />
     <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="Gato.cpp" />
     <ClCompile Include="Lab6P3_DiegoAlberto.cpp" />
+    <ClCompile Include="Perro.cpp" />
     <ClCompile Include="Persona.cpp" />
+    <ClCompile Include="Refugio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Adoptador.h" />
     <ClInclude Include="Animal.h" />
+    <ClInclude Include="Gato.h" />
+    <ClInclude Include="Perro.h" />
     <ClInclude Include="Persona.h" />
+    <ClInclude Include="Refugio.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

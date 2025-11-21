@@ -12,6 +12,21 @@ Adoptador::Adoptador(string _nombre, int _edad, string _sex, string _id, vector<
 };
 Adoptador::Adoptador() {};
 Adoptador::~Adoptador() {};
+int Adoptador::acariciar(int i) {
+	if (this->animales[i]->getAlim() < 100){
+		this->animales[i] += 30;
+	};
+	
+};
+int Adoptador::alimentar(int i) {
+	if (this->animales[i]->getFel() < 100) {
+		this->animales[i] += 40;
+	};
+
+};
+void Adoptador::setAnim() {
 
 
+}
+;
 

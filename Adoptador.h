@@ -12,8 +12,10 @@ public:
 	Adoptador();
 	Adoptador(string _nombre, int _edad, string _sex, string _id, vector<Animal*>& _animales);
 	~Adoptador();
-
+	int acariciar(int i);
+	int alimentar(int i);
 	void mostrarAnimales(vector<Animal*>& _animales);
+	void setAnim();
 	
 
 };

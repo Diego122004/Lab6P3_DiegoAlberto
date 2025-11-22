@@ -1,148 +1,170 @@
-﻿// Lab2P3_DiegoAlberto.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
+﻿
 
 #include <iostream>
 #include <locale>
+#include "Animal.h"
+#include "Adoptador.h"
+#include "Refugio.h"
+#include "Gato.h"
+#include "Perro.h"
 using namespace std;
 
-int main()
-{
+
+// --- Prototipos ---
+// Sirve para poder hacer las funciones abajo del main
+void mostrarMenuRecursivo();
+void ejercicio1();
+
+// Variables globales
+vector<Animal*> animales;
+
+// --------------------
+// Función principal
+// --------------------
+int main() {
     setlocale(LC_ALL, "spanish");
-    int opcion;
-    do {
-        cout << "MENU" << endl;
-        cout << "0. Salir" << endl;
-        cout << "1. Números primos" << endl;
-        cout << "2. Números amigables" << endl;
-        cout << "3. Serie de Fibonacci" << endl;
-        cin >> opcion;
-        switch (opcion)
-        {
-        case 1: {
-            int n;
-            int contDePrimos = 0;
-            int contDeDiv = 0;
-
-            do {
-                cout << "Ingrese un valor de n mayor a 1" << " ";
-                cin >> n;
-
-                for (int i = 2; i < n; i++) {
-
-                    for (int j = 1; j <= i; j++) {
-
-                        if (i % j == 0) {// verifica cuantos divisores tiene
-                            contDeDiv++;
-                        }
-                    }
-                    if (contDeDiv == 2) {//verifica que sean num primos
-                        contDePrimos++;
-                    }
-                    contDeDiv = 0;
-                }
-
-                //cout << "El numero de primos en" <<" " << n << "Es " << " " << contDePrimos;
-
-
-
-                cout << "El numero de primos entre" << " " << "0" << " " << " y" << " " << n << " " << "Es " << contDePrimos << "\n";
-
-                cout << "Ingrese un valor de n mayor a 1\n";
-                cin >> n;
-
-            } while (n != 0 && n >= 1);
-
-            if (n == 0) {
-                cout << "El programa a terminado";
-                break;
-            }
-
-        };
-              break;
-
-        case 2: {
-            int n;
-            int m;
-            int suman = 0;
-            int sumam = 0;
-            cout << "ingrese el primer número:" << " ";
-            cin >> n;
-            cout << "ingrese el segundo número:" << " ";
-            cin >> m;
-
-            for (int i = 1; i <= n; i++) {
-
-                if (i % n == 0) {// verifica que i sea divisor de j
-
-                    suman += i;
-                }
-                // cout << suman << endl;
-            };
-
-            for (int j = 1; j < m; j++) {
-
-                if (m % j == 0) {
-
-                    sumam += j;
-                }
-                // cout << suman << endl;
-
-            };
-            if (suman == sumam) {
-
-                cout << "Son amigables" << endl;
-            }
-            else {
-                cout << "No nos amigables";
-
-            };
-
-        };
-              break;
-        case 3: {
-            int n;
-            int m;
-            int num1 = 0;
-            int num2 = 1;
-            int fibo = num1 + num2;
-            cout << "Ingrese el lim de la serie" << " ";
-            cin >> n;
-            cout << "Ingrese el número para verificar si pertenece a la serie" << " ";
-            cin >> m;
-            bool pertenece = false;
-            while (num1 <= n) {
-                cout << num1 << " ";
-                if (num1 == m) {
-                    pertenece = true;
-
-                    break;
-                }
-                fibo = num1 + num2;
-                num1 = num2;
-                num2 = fibo;
-
-                if (pertenece != true) {
-                    cout << "El número no pertenece a la serie" << endl;
-                }
-                else { cout << "El número pertenece a la serie" << endl; };
-
-            };
-
-
-
-
-
-
-        };
-              break;
-        case 0: {
-
-        };
-              break;
-        default:
-
-            break;
-        };
-    } while (opcion != 0);
+    mostrarMenuRecursivo(); // llamada inicial
+    return 0;
 }
+
+// --------------------
+// Menú recursivo principal
+// --------------------
+void mostrarMenuRecursivo() {
+    cout << "==================== MENU PRINCIPAL ====================\n";
+    cout << "Seleccione una opcion:\n";
+    cout << "1. Gestion, adopcion y cuidado de mascotas\n";
+   
+    cout << "0. Salir\n";
+    cout << "Opcion: ";
+
+    int opcion;
+    cin >> opcion;
+
+    switch (opcion) {
+    case 1:
+        ejercicio1();
+        break;
+    case 0:
+        cout << "Saliendo... Gracias.\n";
+        return; // finaliza la recursión
+    default:
+        cout << "Opcion no valida. Intente de nuevo.\n";
+    }
+
+
+
+    // Llamada recursiva al menú
+    mostrarMenuRecursivo();
+}
+
+// --------------------
+// Ejercicio 1: 
+// --------------------
+void ejercicio1() {
+
+    cout << "==================== Que sos ====================\n";
+    cout << "Seleccione una opcion:\n";
+    cout << "1. Refugio\n";
+    cout << "2. Adoptador\n";
+   
+    cout << "0. Salir\n";
+    cout << "Opcion: ";
+
+    int opcion;
+    cin >> opcion;
+
+    switch (opcion) {
+    case 1:
+        
+        break;
+    case 0:
+        cout << "Saliendo... Gracias.\n";
+        return; // finaliza la recursión
+    default:
+        cout << "Opcion no valida. Intente de nuevo.\n";
+    }
+
+    mostrarMenuRecursivo();
+};
+
+void agremascota1() {
+
+    cout << "==================== MENU PRINCIPAL ====================\n";
+    cout << "Seleccione una opcion:\n";
+    cout << "1. Añadir perro\n";
+    cout << "1. Añadir Gato\n";
+
+    cout << "0. Salir\n";
+    cout << "Opcion: ";
+
+    int opcion2;
+    cin >> opcion2;
+
+    switch (opcion2) {
+    case 1:
+        cout << "Nombre\n";
+        string nom;
+        cin >> nom;
+        cout << "edad\n";
+        int eda;
+        cin >> eda;
+       
+        cout << "Alimentacon\n";
+        int alim;
+        cin >> alim;
+        cout<<"sexo\n";
+        string sex;
+        cin >> alim;
+        cout << "Felicidad\n";
+        int feli;
+        cin >> feli;
+        cout << "raza\n";
+        string raza;
+        cin >> alim; 
+        cout << "Ladrido\n";
+        int ladri;
+        cin >> ladri;
+
+        Gato* gato = new Gato(nom,eda,sex,alim,feli,raza,ladri);
+
+
+
+        cout << "0. Salir\n";
+        cout << "Opcion: ";
+    };
+}
+
+
+
+void refugio() {
+    Refugio refu = Refugio(animales);
+
+    cout << "==================== MENU REFUGIO ====================\n";
+    cout << "Seleccione una opcion:\n";
+    cout << "1. Añadir animal\n";
+    cout << "2. Ver animales\n";
+    cout << "3. Dar en adopcion\n";
+
+    cout << "0. Salir\n";
+    cout << "Opcion: ";
+
+    int opcion;
+    cin >> opcion;
+
+    switch (opcion) {
+    case 1:
+        agremascota1();
+            break;
+    case 2:
+
+        case 0:
+            cout << "Saliendo... Gracias.\n";
+            return; // finaliza la recursión
+        default:
+            cout << "Opcion no valida. Intente de nuevo.\n";
+        } cout << "==================== MENU PRINCIPAL ====================\n";
+
+
+    }
 

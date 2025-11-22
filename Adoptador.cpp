@@ -10,17 +10,19 @@ Adoptador::Adoptador(string _nombre, int _edad, string _sex, string _id, vector<
 	this->id = _id;
 	this->animales = _animales;
 };
-Adoptador::Adoptador() {};
+
 Adoptador::~Adoptador() {};
 int Adoptador::acariciar(int i) {
-	if (this->animales[i]->getAlim() < 100){
-		this->animales[i] += 30;
+	if (this->animales.at(i)->getAlim() < 100){
+		this->animales.at(i)->alimentacion += 30;
+		return this->animales.at(i)->alimentacion;
 	};
 	
 };
 int Adoptador::alimentar(int i) {
-	if (this->animales[i]->getFel() < 100) {
-		this->animales[i] += 40;
+	if (this->animales.at(i)->getFel() < 100) {
+		this->animales.at(i) += 40;
+		return this->animales.at(i)->alimentacion += 40;
 	};
 
 };

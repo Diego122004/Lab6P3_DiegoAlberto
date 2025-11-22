@@ -2,9 +2,10 @@
 #include <iostream>
 #include <string>
 #include "Animal.h"
+#include <vector>
 using namespace std;
 class Refugio {
-	vector<Animal*> animales;
+	vector <Animal*> animales;
 public:
 	Refugio();
 	Refugio(vector<Animal*> _animales);

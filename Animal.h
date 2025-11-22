@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Adoptador.h"
+//#include "Adoptador.h"
+class Adaptador;
 using namespace std;
 class Animal {
 protected:

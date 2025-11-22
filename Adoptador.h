@@ -14,7 +14,7 @@ public:
 	~Adoptador();
 	int acariciar(int i);
 	int alimentar(int i);
-	void mostrarAnimales(vector<Animal*>& _animales);
+
 	void setAnim();
 	
 
